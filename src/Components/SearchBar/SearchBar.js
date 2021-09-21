@@ -7,7 +7,7 @@ export class SearchBar extends React.Component{
     super(props);
 
     this.state = {
-      term: 'Heathen'
+      term: this.props.searchTerm
     };
 
     this.search = this.search.bind(this);
@@ -26,9 +26,8 @@ export class SearchBar extends React.Component{
     return (
       <div className="SearchBar">
         <input
-          placeholder="Enter a Song"
+          placeholder={this.state.term}
           onChange={this.handleTermChange}
-
         />
         <button className="SearchButton" onClick={this.search}>SEARCH</button>
       </div>
