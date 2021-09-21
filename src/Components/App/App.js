@@ -12,7 +12,8 @@ class App extends React.Component{
 
     this.state = { searchResults: [],
     playlistName: 'default',
-    playlistTracks: []
+    playlistTracks: [],
+    restoredTerm: this.restoreTerm()
     };
 
     this.spotify = new Spotify();
@@ -22,6 +23,25 @@ class App extends React.Component{
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
     this.savePlaylist = this.savePlaylist.bind(this);
     this.search = this.search.bind(this);
+    this.restoreTerm = this.restoreTerm.bind(this);
+  }
+
+  // Get the last term searched for from local storage
+  restoreTerm(){
+
+    // Instance of localStorage
+    let storage = window.localStorage;
+
+    // Check if we have a term already set if not then set a default one
+    console.log(storage.getItem('term'));
+    if(storage.getItem('term')){
+      console.log('Found in localStorage');
+      return storage.getItem('term');
+    } else {
+      console.log('Not found in localStorage');
+      return 'Enter track name';
+    }
+
   }
 
   updatePlaylistName(name){
@@ -71,6 +91,12 @@ class App extends React.Component{
   }
 
   async search(term) {
+
+    // Instance of localStorage
+    let storage = window.localStorage;
+    // Save the search term
+    storage.setItem('term', term);
+
     let gatherData = async () => {
       let results = await this.spotify.search(term);
       return results;
@@ -95,6 +121,7 @@ class App extends React.Component{
         <div className="App">
           <SearchBar
             onSearch={this.search}
+            searchTerm={this.state.restoredTerm}
           />
 
           <div className="App-playlist">
