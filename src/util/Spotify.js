@@ -1,13 +1,12 @@
 
 let accessToken;
 
-const clientID = '45246783a4b64ea8a45181a4ef334d59';
-const redirectUri = 'http://localhost:3000/';
+const clientID = 'CLIENT_ID';
+const redirectUri = 'REDIRECT_URI';
 
 export class Spotify  {
 
   constructor() {
-    this._redirectUri = 'http://localhost:3000/callback';
     this._scope = 'user-read-private user-read-email playlist-modify-private playlist-modify-public';
     this._state = '123456789';
   }
@@ -37,7 +36,7 @@ export class Spotify  {
     window.location.href = 'https://accounts.spotify.com/authorize?'
     + 'client_id=' + clientID
     + '&response_type=token'
-    + '&scope=playlist-modify-public'
+    + '&scope=' + this._scope
     + '&redirect_uri=' + redirectUri;
 
   }
