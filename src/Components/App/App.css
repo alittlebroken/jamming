@@ -28,12 +28,13 @@ h2 {
 }
 
 .App {
-  height: 100vh;
+  height: 100%;
   padding: 0 17% 10% 17%;
   /* background-image: url('./background_photo_desktop.webp'); */
+  background-color: #010c3f;
   background-image: url('./jamming_bg.jpg');
   background-size: cover;
-  background-position: left;
+  background-position: cover;
   background-repeat: no-repeat;
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
