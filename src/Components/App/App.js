@@ -65,6 +65,9 @@ class App extends React.Component{
       playlistName: 'New Playlist',
       playlistTracks: []
     });
+
+    // Reset the playlist name on the page
+    document.querySelectorAll('input')[1].value = 'New Playlist';  
   }
 
   async search(term) {
