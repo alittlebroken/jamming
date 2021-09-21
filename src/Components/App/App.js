@@ -67,7 +67,7 @@ class App extends React.Component{
     });
 
     // Reset the playlist name on the page
-    document.querySelectorAll('input')[1].value = 'New Playlist';  
+    document.querySelectorAll('input')[1].value = 'New Playlist';
   }
 
   async search(term) {
@@ -86,16 +86,18 @@ class App extends React.Component{
     })
   }
 
-
   render(){
     return (
       <div>
+
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
+
         <div className="App">
           <SearchBar
             onSearch={this.search}
           />
-          <div className="App-Playlist">
+
+          <div className="App-playlist">
 
             <SearchResults
               foundTracks={this.state.searchResults}
@@ -110,7 +112,9 @@ class App extends React.Component{
               onNameChange={this.updatePlaylistName}
             />
           </div>
+
         </div>
+
       </div>
     )
   }
