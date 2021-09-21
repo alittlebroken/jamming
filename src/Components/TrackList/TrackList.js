@@ -9,7 +9,7 @@ export class TrackList extends React.Component {
   }
 
   render(){
-    
+
     return (
       <div className="TrackList">
 
@@ -22,6 +22,7 @@ export class TrackList extends React.Component {
               onRemove={this.props.onRemove}
               isRemoval={this.props.isRemoval}
             />
+
           ))
         ) : (
           <h2>No results found</h2>

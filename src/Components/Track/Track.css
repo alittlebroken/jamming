@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgba(256, 256, 256, 0.8);
+  margin-bottom: 15px;
 }
 
 .Track-action {
@@ -23,11 +24,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 72px;
+
 }
 
 .Track-information h3 {
-  margin-bottom: .22rem;
+  margin-bottom: .18rem;
 }
 
 .Track-information p {
